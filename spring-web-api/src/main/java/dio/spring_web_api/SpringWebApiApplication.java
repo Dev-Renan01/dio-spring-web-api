@@ -8,7 +8,7 @@ public class SpringWebApiApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringWebApiApplication.class, args);
-		System.out.println("Projeto criado!");
+
 	}
 
 }
