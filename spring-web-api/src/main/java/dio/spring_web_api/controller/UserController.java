@@ -13,26 +13,30 @@ public class UserController {
     @Autowired
     private UserRepository repository;
 
-    @GetMapping()
+    @GetMapping("/listar")
     public List<User> getUsers(){
         return repository.findAll();
     }
 
-    @GetMapping("/{username}")
+    @GetMapping("/buscar/{username}")
     public User getOne(@PathVariable("username") String username){
+
         return repository.findByUsername(username);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/deletar/{id}")
     public void deleteUser(@PathVariable("id") Integer id){
-         repository.deleteById(id);
+
+        repository.deleteById(id);
     }
 
-    @PostMapping()
+    @PostMapping("/atualizar")
     public void postUser(@RequestBody User user){
         repository.save(user);
     }
 
-
-
+    @PutMapping("/salvar")
+    public void putUser(@RequestBody User user){
+        repository.save(user);
+    }
 }
