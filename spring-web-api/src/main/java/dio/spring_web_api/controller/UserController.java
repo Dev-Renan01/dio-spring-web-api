@@ -30,13 +30,13 @@ public class UserController {
         repository.deleteById(id);
     }
 
-    @PostMapping("/atualizar")
-    public void postUser(@RequestBody User user){
+    @PutMapping("/atualizar")
+    public void putUser(@RequestBody User user){
         repository.save(user);
     }
 
-    @PutMapping("/salvar")
-    public void putUser(@RequestBody User user){
+    @PostMapping("/salvar")
+    public void postUser(@RequestBody User user){
         repository.save(user);
     }
 }
